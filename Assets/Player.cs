@@ -6,6 +6,8 @@ public class Player : Entity
 {
     private Rigidbody2D rd2D;
 
+    public GameObject objWeapon;
+
     public void Awake()
     {
         rd2D = GetComponent<Rigidbody2D>();
@@ -24,6 +26,15 @@ public class Player : Entity
             rd2D.MovePosition(rd2D.position + moveSpeed * Time.deltaTime * (Vector2)HMInput.instance.moveDir);
             Quaternion targetQ = Quaternion.LookRotation(Vector3.forward, HMInput.instance.moveDir);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetQ, 360);
+        } else
+        {
+            rd2D.velocity =  Vector3.zero;
         }
     }
+
+    public void FixedUpdate()
+    {
+        
+    }
+
 }

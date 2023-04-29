@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PSObject : MonoBehaviour
+public class PSObject : Entity
 {
     protected string key;
     private Transform originParentTr;
